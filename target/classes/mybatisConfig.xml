@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--别名配置-->
+    <typeAliases>
+        <!--批量别名配置：指定批量定义别名的类包，别名为类名（首字母大小写都可以）-->
+        <package name="club.bagedate.entity"/>
+    </typeAliases>
+    <mappers>
+        <mapper resource="club/bagedate/o2o/mapper/UserMapper.xml"/>
+        <!--<mapper resource="mapper/ItemsMapper.xml"/>-->
+        <!--<mapper resource="mapper/OrdersDetailMapper.xml"/>-->
+        <!--<mapper resource="mapper/OrdersMapper.xml"/>-->
+        <!--<mapper resource="mapper/UserMapper.xml"/>-->
+    </mappers>
+</configuration>
