@@ -7,6 +7,9 @@
       <if test="shopCategoryCondition.shopcategoryparentid!=null">
         and shopCategoryParentId = #{shopCategoryCondition.shopcategoryparentid}
       </if>
+      <if test="shopCategoryCondition.shopcategoryparentid==null">
+        and shopCategoryParentId = null
+      </if>
     </where>
     ORDER BY
     shopCategoryPriority DESC
