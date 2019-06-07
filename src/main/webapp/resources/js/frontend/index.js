@@ -49,8 +49,8 @@ $(function() {
 
     //大类点击之后执行的代码
     $('.row').on('click', '.shop-classify', function (e) {
-        var shopCategoryId = e.currentTarget.dataset.category;
-        var newUrl = '/o2o/frontend/shoplist.do?parentId=' + shopCategoryId;
+        var shopcategoryid = e.currentTarget.dataset.category;
+        var newUrl = '/o2o/frontend/shoplist.do?parentId=' + shopcategoryid;
         window.location.href = newUrl;
     });
 

@@ -4,7 +4,7 @@ import club.bagedate.o2o.dto.ShopExecution;
 import club.bagedate.o2o.entity.*;
 import club.bagedate.o2o.enums.ShopStateEnum;
 import club.bagedate.o2o.service.PlaceService;
-import club.bagedate.o2o.service.ShopCatrgoryService;
+import club.bagedate.o2o.service.ShopCategoryService;
 import club.bagedate.o2o.service.ShopService;
 import club.bagedate.o2o.util.CodeUtil;
 import club.bagedate.o2o.util.HttpServletRequestUtil;
@@ -31,7 +31,7 @@ public class ShopManagementController {
     private ShopService shopService;
 
     @Autowired
-    private ShopCatrgoryService shopCatrgoryService;
+    private ShopCategoryService shopCategoryService;
 
     @Autowired
     private PlaceService placeService;
@@ -100,7 +100,7 @@ public class ShopManagementController {
                 Shop shop = shopService.selectById(shopId);
                 List<Place> placeList = placeService.getPlaceList();
                 //ShopCategory不允许店家修改这里就不获取列表了
-                String shopCategoryName = shopCatrgoryService.selectById(shop.getShopcategoryid()).getShopcategoryname();
+                String shopCategoryName = shopCategoryService.selectById(shop.getShopcategoryid()).getShopcategoryname();
                 modelMap.put("shopCategoryName",shopCategoryName);
                 modelMap.put("placeList",placeList);
                 modelMap.put("shop",shop);
@@ -125,7 +125,7 @@ public class ShopManagementController {
         List<ShopCategory> shopCategoryList;
         List<Place> placeList;
         try {
-            shopCategoryList = shopCatrgoryService.getShopCategoryList(new ShopCategory());
+            shopCategoryList = shopCategoryService.getShopCategoryList(new ShopCategory());
             placeList = placeService.getPlaceList();
             modelMap.put("shopCategoryList",shopCategoryList);
             modelMap.put("placeList",placeList);
